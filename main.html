@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Password Generator</title>
+	</head>
+	<body>
+		<header>
+			<h1>Password Generator</h1>
+		</header>
+
+		<main class="container">
+			<div class="contain">
+				<div class="row">
+					<label for="">Generate Password</label>
+					<input type="text" id="password" placeholder="Generate Password Here" readonly />
+				</div>
+
+				<div class="row">
+					<label for="">Password Length: </label>
+					<input
+						type="number"
+						id="numslength"
+						min="8"
+						max="32"
+						value="16"
+						oninput="updateSlider(this.value)"
+					/>
+					<br />
+					<label
+						>8
+						<input
+							type="range"
+							id="rangelength"
+							min="8"
+							max="32"
+							value="16"
+							oninput="updateNums(this.value)"
+						/>
+						32</label
+					>
+				</div>
+
+				<div class="row">
+					<div class="col checkboxes">
+						<label><input type="checkbox" id="lowercase" checked />Includes Lowercase</label>
+						<br />
+						<label><input type="checkbox" id="uppercase" checked />Includes Uppercase</label>
+						<br />
+						<label><input type="checkbox" id="number" checked />Includes Numbers</label>
+						<br />
+						<label><input type="checkbox" id="symbol" checked />Includes Symbols</label>
+					</div>
+
+					<div class="col">
+						<div class="strength">
+							<div class="bar" aria-hidden="true"><i id="strengthBar"></i></div>
+							<div class="strengthText" id="strengthText">Strength: -</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<button id="generateBtn">Generate Password</button>
+					<br />
+					<button id="copyBtn">Copy</button>
+					<label for=""><input type="checkbox" id="toggleShow" />Show</label>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<p>&copy; 2026 All Right are reserved.</p>
+		</footer>
+		<script src="main.js"></script>
+	</body>
+</html>
